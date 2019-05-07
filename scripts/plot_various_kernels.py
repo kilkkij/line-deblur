@@ -10,7 +10,7 @@ from imtools import plot_image
 tf.InteractiveSession()
 
 def kernel_from_vector(params: List[float]):
-	return normal_spread_line_kernel(tf.constant(np.asarray(params, dtype=np.float32)))
+    return normal_spread_line_kernel(tf.constant(np.asarray(params, dtype=np.float32)))
 
 plot_image(kernel_from_vector([2., 4.]).eval()[..., 0, 0], '[2., 4.]', subplots()[1])
 plot_image(kernel_from_vector([4., 2.]).eval()[..., 0, 0], '[4., 2.]', subplots()[1])
