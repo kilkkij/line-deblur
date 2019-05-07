@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 import unittest
 import os
-from src.line_kernel import normal_spread_line_kernel, MAX_SIZE
+from core.kernels import normal_spread_line_kernel, MAX_SIZE
 
 class TestLineKernel(tf.test.TestCase):
 
