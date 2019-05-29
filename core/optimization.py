@@ -13,7 +13,7 @@ diff_stdev_initial = 0.03
 error_stdev_initial = 0.01
 
 def optimize(obs_data):
-    with tf.Session() as session:
+    with tf.Session():
         obs = imtools.to_tf_image_shape(tf.constant(obs_data))
         image = tf.Variable(obs)
         diff_stdev = tf.Variable(diff_stdev_initial)
