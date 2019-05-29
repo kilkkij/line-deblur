@@ -10,8 +10,5 @@ python3 generate_test_case.py original-photos/lena.jpg lena --noise 0.005
 python3 ../core/deconvolve.py cases/lena/obs.png cases/lena/deblurred.png -k cases/lena/kernel.png
 python3 draw_collage.py cases/lena/obs.png cases/lena/deblurred.png -l cases/lena/latent.png -k cases/lena/kernel.png -o cases/lena/collage.png
 
-python3 ../core/deconvolve.py original-photos/plants-resized.jpg cases/plants/deblurred.png -k cases/plants/kernel.png
-python3 draw_collage.py original-photos/plants-resized.jpg cases/plants/deblurred.png -k cases/plants/kernel.png -o cases/plants/collage.png
-
 python3 ../core/deconvolve.py original-photos/bike.jpg cases/bike/deblurred.png -k cases/bike/kernel.png
 python3 draw_collage.py original-photos/bike.jpg cases/bike/deblurred.png -k cases/bike/kernel.png -o cases/bike/collage.png

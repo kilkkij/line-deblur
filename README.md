@@ -51,12 +51,6 @@ There are some signs of weird inference, like the part where the front wheel tur
 
 ![](examples/cases/bike/collage.png)
 
-## A real-life photo with burned-out parts
-
-Ouch! Some bits are improved (background grill, big leaf) but the clipped highlights and dark parts break the algorithm.
-
-![](examples/cases/plants/collage.png)
-
 ## Conclusion
 
 Just use convolutional neural nets instead.
