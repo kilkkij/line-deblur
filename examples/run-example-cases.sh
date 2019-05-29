@@ -12,3 +12,6 @@ python3 draw_collage.py cases/lena/obs.png cases/lena/deblurred.png -l cases/len
 
 python3 ../core/deconvolve.py original-photos/plants-resized.jpg cases/plants/deblurred.png -k cases/plants/kernel.png
 python3 draw_collage.py original-photos/plants-resized.jpg cases/plants/deblurred.png -k cases/plants/kernel.png -o cases/plants/collage.png
+
+python3 ../core/deconvolve.py original-photos/bike.jpg cases/bike/deblurred.png -k cases/bike/kernel.png
+python3 draw_collage.py original-photos/bike.jpg cases/bike/deblurred.png -k cases/bike/kernel.png -o cases/bike/collage.png

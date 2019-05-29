@@ -2,7 +2,6 @@
 import tensorflow as tf
 import imtools
 import kernels
-import optimization
 
 cases = ['lena', 'library']
 

@@ -1,7 +1,5 @@
 
 import argparse
-import os
-import sys
 
 import imtools
 import optimization

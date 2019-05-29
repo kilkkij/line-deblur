@@ -1,7 +1,6 @@
 
 import numpy as np
 import tensorflow as tf
-import tensorflow_probability as tfp
 
 MAX_SIZE = 10
 
@@ -15,7 +14,8 @@ def normal_spread_line_kernel(params):
     radius = tf.math.sqrt(tf.math.reduce_sum(tf.math.square(params)))
     normalized_params = params/radius
     distance = cross_product_2d(normalized_params, X, Y)
-    raw_line = tfp.distributions.Normal(loc=tf.zeros_like(distance), scale=0.635).prob(value=distance)
+    # raw_line = tfp.distributions.Normal(loc=tf.zeros_like(distance), scale=0.635).prob(value=distance)
+    raw_line = tf.math.maximum(1. - tf.math.abs(distance), 0.)
     clipped = _clipped_radius_cone(R2, radius)*raw_line
     normalized = clipped/tf.math.reduce_sum(clipped)
     in_standard_shape = tf.reshape(normalized, normalized.shape.as_list()+[1, 1])

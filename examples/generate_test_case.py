@@ -1,14 +1,11 @@
 
 import argparse
-import os
-import sys
 import tensorflow as tf
 
 import sys
 sys.path.append('../core')
 import imtools
 import kernels
-import optimization
 
 parser = argparse.ArgumentParser()
 parser.add_argument('input_path', type=str, help='input')
