@@ -45,8 +45,18 @@ With natural intensity variation. I think the waves happen because the mixture p
 
 ![](examples/cases/lena/collage.png)
 
+## A real-life bike
+
+There are some signs of weird inference, like the part where the front wheel turns into waves suddenly, and the white dots.
+
+![](examples/cases/bike/collage.png)
+
 ## A real-life photo with burned-out parts
 
 Ouch! Some bits are improved (background grill, big leaf) but the clipped highlights and dark parts break the algorithm.
 
 ![](examples/cases/plants/collage.png)
+
+## Conclusion
+
+Just use convolutional neural nets instead.
