@@ -1,11 +1,11 @@
 
 import tensorflow as tf
-from core.kernels import normal_spread_line_kernel, MAX_SIZE
+from core.kernels import line_kernel, MAX_SIZE
 
 class TestLineKernel(tf.test.TestCase):
 
     def test_diagonal_kernel(self):
-        kernel = normal_spread_line_kernel(tf.constant([3.5, 3.5]))
+        kernel = line_kernel(tf.constant([3.5, 3.5]))
         middle = MAX_SIZE//2
         max_value = tf.reduce_max(kernel)
         self.assertAllClose(max_value, kernel[middle, middle, 0, 0])

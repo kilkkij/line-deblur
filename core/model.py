@@ -10,7 +10,7 @@ PosteriorComponents = namedtuple('PosteriorComponents', 'log_posterior log_likel
 
 def log_posterior(obs, image, kernel_params, diff_stdev, error_stdev):
     prior = log_prior(image, kernel_params, diff_stdev)
-    kernel = kernels.normal_spread_line_kernel(kernel_params)
+    kernel = kernels.line_kernel(kernel_params)
     likelihood = log_likelihood(obs, image, kernel, error_stdev)
     return PosteriorComponents(
         likelihood + prior,

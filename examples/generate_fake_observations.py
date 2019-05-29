@@ -7,7 +7,7 @@ cases = ['lena', 'library']
 
 for case in cases:
     true_kernel_params = tf.constant([2.0, 4.0])
-    true_kernel = kernels.normal_spread_line_kernel(true_kernel_params)
+    true_kernel = kernels.line_kernel(true_kernel_params)
     path = '../data/%s.jpg'%case
     raw_data = imtools.imread(path)
     latent_image_data = imtools.shrink(raw_data, 3)

@@ -10,7 +10,7 @@ import sys
 path = sys.argv[1]
 
 true_kernel_params = tf.constant([4.0, 2.0])
-true_kernel = kernels.normal_spread_line_kernel(true_kernel_params)
+true_kernel = kernels.line_kernel(true_kernel_params)
 latent_image_data = imtools.shrink(imtools.imread(path), 3)
 latent_image = imtools.to_tf_image_shape(tf.constant(latent_image_data, dtype=tf.float32))
 

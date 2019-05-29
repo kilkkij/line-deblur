@@ -7,7 +7,7 @@ MAX_SIZE = 10
 def cross_product_2d(vector, X, Y):
     return vector[0]*Y - vector[1]*X
 
-def normal_spread_line_kernel(params):
+def line_kernel(params):
     x = np.arange(-MAX_SIZE/2, MAX_SIZE/2+1, dtype=np.float32)
     X, Y = tf.meshgrid(x, x)
     R2 = tf.math.square(X) + tf.math.square(Y)

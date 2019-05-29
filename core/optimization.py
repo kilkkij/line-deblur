@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 import imtools
-import hierarchical_model
+import model
 import cost_logging
 
 max_iterations = 3000
@@ -21,7 +21,7 @@ def optimize(obs_data):
         kernel_params = tf.Variable(np.array(kernel_params_initial, dtype=np.float32))
         optimizer = tf.train.AdadeltaOptimizer(learning_rate=1., rho=0.80)
         fast_optimizer = tf.train.AdadeltaOptimizer(learning_rate=50., rho=0.80)
-        posterior_components = hierarchical_model.log_posterior(obs, image, kernel_params, diff_stdev, error_stdev)
+        posterior_components = model.log_posterior(obs, image, kernel_params, diff_stdev, error_stdev)
         cost = -posterior_components.log_posterior
         steps = [
             optimizer.minimize(cost, var_list=[image]),
