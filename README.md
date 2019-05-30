@@ -37,7 +37,7 @@ A library with nice flat surfaces. Camera shake was generated.
 
 ## Library with noise
 
-Gaussian noise will of course amplify in the result.
+Gaussian noise seems to make the model default to flat surfaces in the solution.
 
 ![](examples/cases/library/collage.png)
 
@@ -55,4 +55,4 @@ Not bad, but the prior doesn't seem to punish white dots hard enough.
 
 ## Conclusion
 
-Tweaking the model is finicky. Particularly the prior distribution is difficult to match real life photos. You might be better off using convolutional neural nets.
+Tweaking the model is finicky. Particularly the prior distribution is difficult to have represent the statistics of real life photos. You might be better off using convolutional neural nets.
