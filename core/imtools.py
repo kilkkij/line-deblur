@@ -1,7 +1,6 @@
 
 import os
 import tensorflow as tf
-import math
 import numpy as np
 import cv2
 

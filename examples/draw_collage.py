@@ -1,6 +1,8 @@
 
 import argparse
+import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 
 import sys
 sys.path.append('../core')
@@ -22,14 +24,21 @@ names = [
     'obs',
     'estimate'
     ]
+widths = [1, 1]
 if args.latent is not None:
     images.append(imtools.imread(args.latent))
     names.append('latent')
+    widths.append(1)
 if args.kernel is not None:
-    images.append(imtools.imread(args.kernel))
+    raw_image = imtools.imread(args.kernel)
+    images.append(raw_image/np.max(raw_image))
     names.append('est. kernel')
+    widths.append(.5)
 
-fig, axes = plt.subplots(1, len(images), figsize=(3*len(images)+1, 3.5))
+gs = gridspec.GridSpec(1, len(images), width_ratios=widths)
+fig = plt.figure(figsize=(3*len(images)+1, 3.5))
+axes = [plt.subplot(gsi) for gsi in gs]
+
 for ax, name, image in zip(axes, names, images):
     imtools.plot_image(image, name, ax)
 

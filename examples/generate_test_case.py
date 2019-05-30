@@ -1,14 +1,11 @@
 
 import argparse
-import os
-import sys
 import tensorflow as tf
 
 import sys
 sys.path.append('../core')
 import imtools
 import kernels
-import optimization
 
 parser = argparse.ArgumentParser()
 parser.add_argument('input_path', type=str, help='input')
@@ -17,7 +14,7 @@ parser.add_argument('--noise', dest='noise_stdev', type=str, default=0., help='n
 args = parser.parse_args()
 
 true_kernel_params = tf.constant([2.0, 4.0])
-true_kernel = kernels.normal_spread_line_kernel(true_kernel_params)
+true_kernel = kernels.line_kernel(true_kernel_params)
 raw_data = imtools.imread(args.input_path)
 latent_image_data = imtools.shrink(raw_data, 3)
 latent_image = imtools.to_tf_image_shape(tf.constant(latent_image_data, dtype=tf.float32))
