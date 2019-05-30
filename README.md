@@ -37,13 +37,13 @@ A library with nice flat surfaces. Camera shake was generated.
 
 ## Library with noise
 
-Barely perceptible normally-distributed noise will of course amplify in the result.
+Gaussian noise will of course amplify in the result.
 
 ![](examples/cases/library/collage.png)
 
 ## Lena
 
-With natural intensity variation. There are hints of waviness, which I think happen because the mixture prior doesn't expect continuously varying smooth surfaces. Again, generated camera shake.
+Again, with noise and generated camera shake. There are hints of waviness, which I think happen because the mixture prior doesn't expect continuously varying smooth surfaces.
 
 ![](examples/cases/lena/collage.png)
 

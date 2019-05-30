@@ -7,7 +7,7 @@ import imtools
 import model
 import cost_logging
 
-max_iterations = 3000
+max_iterations = 2000
 kernel_params_initial = [4.0, 2.0]
 diff_stdev_initial = 0.03
 error_stdev_initial = 0.01
